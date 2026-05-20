@@ -1,0 +1,2 @@
+# Controle-de-Validade-de-Medica-es
+Sistema dedicado ao Projeto Integrado Multidisciplinar da UNIVERSIDADE PAULISTA, com base de estudo o Hospital Ortopédico AACD Servidor.
