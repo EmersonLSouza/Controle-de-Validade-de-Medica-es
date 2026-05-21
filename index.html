@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Medicamentos - AACD</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Hospital Ortopédico AACD</h1>
+        <p>Sistema de Controle de Validade de Medicamentos</p>
+    </header>
+
+    <main class="container">
+
+        <section class="formulario">
+            <h2>Cadastrar Medicamento</h2>
+
+            <form action="salvar.py" method="POST">
+
+                <input type="text" name="nome" placeholder="Nome do medicamento" required>
+
+                <input type="text" name="lote" placeholder="Lote" required>
+
+                <input type="date" name="validade" required>
+
+                <input type="number" name="quantidade" placeholder="Quantidade" required>
+
+                <button type="submit">Cadastrar</button>
+
+            </form>
+        </section>
+
+        <section class="tabela">
+            <h2>Medicamentos Cadastrados</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicamento</th>
+                        <th>Lote</th>
+                        <th>Validade</th>
+                        <th>Quantidade</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- EXEMPLOS -->
+
+                    <tr class="ok">
+                        <td>Dipirona</td>
+                        <td>XP2026</td>
+                        <td>2026-12-20</td>
+                        <td>120</td>
+                        <td>OK</td>
+                    </tr>
+
+                    <tr class="proximo">
+                        <td>Paracetamol</td>
+                        <td>AB123</td>
+                        <td>2026-06-01</td>
+                        <td>50</td>
+                        <td>Próximo do vencimento</td>
+                    </tr>
+
+                    <tr class="vencido">
+                        <td>Amoxicilina</td>
+                        <td>MED777</td>
+                        <td>2025-10-10</td>
+                        <td>15</td>
+                        <td>Vencido</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>
