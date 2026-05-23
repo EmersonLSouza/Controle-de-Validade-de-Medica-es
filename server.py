@@ -55,3 +55,12 @@ def salvar():
     db.session.add(nova_med)
     db.session.commit()
     return redirect('/')
+def testar_banco():
+    # Verifica se já existe algo no banco
+    contagem = Medicamento.query.count()
+    print(f"O banco está configurado e contém {contagem} itens cadastrados.")
+
+# Chame aqui:
+with app.app_context():
+    db.create_all()
+    testar_banco() 
