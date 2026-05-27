@@ -5,10 +5,6 @@ class ControleMedicamentos:
         self.estoque = []
 
     def adicionar_medicamento(self, nome, lote, fabricacao_str, validade_str, quantidade):
-        """
-        Adiciona um medicamento ao estoque.
-        Datas no formato 'YYYY-MM-DD' (Ano-Mês-Dia).
-        """
         try:
             # Converte as strings para objetos de data do Python
             fabricacao = datetime.strptime(fabricacao_str, '%Y-%m-%d').date()
@@ -53,7 +49,7 @@ if __name__ == "__main__":
     sistema.adicionar_medicamento("Amoxicilina", "L-202", "2024-06-10", "2026-06-10", 20) 
     sistema.adicionar_medicamento("Ibuprofeno", "L-303", "2023-12-01", "2025-12-01", 15) 
     
-    # Testando a trava de segurança (Erro intencional: fabricação depois da validade)
+    # Testando a trava de segurança (Erro intencional)
     sistema.adicionar_medicamento("Dipirona", "L-404", "2026-01-01", "2024-01-01", 10)
     
     print("\n--- RELATÓRIO DE VALIDADES ---")
@@ -68,6 +64,6 @@ if __name__ == "__main__":
     # 2. Checar Vencimentos Próximos
     proximos = sistema.listar_vencimento_proximo(dias_alerta=90)
     if proximos:
-        print("\n⚠️ VENCENDO NOS PRÓXIMOS 30 DIAS:")
+        print("\n⚠️ VENCENDO NOS PRÓXIMOS 90 DIAS:")
         for med in proximos:
              print(f" - {med['nome']} (Lote {med['lote']}) | Fab: {med['fabricacao']} | Vence: {med['validade']}")
