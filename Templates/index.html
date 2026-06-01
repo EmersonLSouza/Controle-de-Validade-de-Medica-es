@@ -7,117 +7,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= CONFIGURAÇÕES GERAIS ================= */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f0f4f8; /* Fundo cinza azulado bem suave */
-            color: #334155; 
-            line-height: 1.6; 
-            padding: 30px 20px; 
-        }
-
-        /* ================= CABEÇALHO ================= */
+        body { font-family: 'Inter', sans-serif; background-color: #f0f4f8; color: #334155; line-height: 1.6; padding: 30px 20px; }
         .topo { text-align: center; margin-bottom: 40px; }
-        .topo h1 { color: #0f172a; font-size: 2.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px;}
+        .topo h1 { color: #0f172a; font-size: 2.2rem; font-weight: 700; }
         .topo p { color: #64748b; font-size: 1.1rem; }
 
-        /* ================= ESTRUTURA E CARTÕES ================= */
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            display: grid; 
-            gap: 30px; 
-            grid-template-columns: 1fr; /* Padrão: 1 coluna para celular */
-        }
-        
-        /* Quando a tela for grande (computador), divide em 2 colunas */
-        @media (min-width: 800px) {
-            .container { grid-template-columns: 350px 1fr; }
-        }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; gap: 30px; grid-template-columns: 1fr; }
+        @media (min-width: 900px) { .container { grid-template-columns: 350px 1fr; } }
 
-        .card { 
-            background: #ffffff; 
-            border-radius: 12px; 
-            padding: 24px; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
-        }
-        .card-title { 
-            font-size: 1.25rem; 
-            font-weight: 600; 
-            color: #0f172a; 
-            margin-bottom: 20px; 
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 10px; 
-        }
+        .card { background: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .card-title { font-size: 1.25rem; font-weight: 600; color: #0f172a; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
 
-        /* ================= FORMULÁRIO ================= */
         .form-group { margin-bottom: 16px; }
         label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 6px; color: #475569; }
-        
-        input { 
-            width: 100%; 
-            padding: 10px 12px; 
-            border: 1px solid #cbd5e1; 
-            border-radius: 6px; 
-            font-size: 1rem; 
-            color: #0f172a; 
-            transition: all 0.2s; 
-            font-family: inherit; 
-        }
-        
-        /* Efeito ao clicar no campo de digitar */
+        input { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; transition: all 0.2s; font-family: inherit; }
         input:focus { outline: none; border-color: #10b981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2); }
-        
-        button { 
-            width: 100%; 
-            background-color: #10b981; /* Verde saúde */
-            color: white; 
-            padding: 14px; 
-            border: none; 
-            border-radius: 6px; 
-            font-size: 1rem; 
-            font-weight: 600; 
-            cursor: pointer; 
-            transition: background-color 0.2s; 
-            margin-top: 10px; 
-        }
-        button:hover { background-color: #059669; } /* Verde mais escuro no hover */
+        button { width: 100%; background-color: #10b981; color: white; padding: 14px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: 0.2s; margin-top: 10px; }
+        button:hover { background-color: #059669; }
 
-        /* ================= TABELA ================= */
         .table-container { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; text-align: left; }
-        
-        th { 
-            background-color: #f8fafc; 
-            padding: 14px 16px; 
-            font-weight: 600; 
-            color: #475569; 
-            border-bottom: 2px solid #e2e8f0; 
-            white-space: nowrap; 
-        }
-        
+        th { background-color: #f8fafc; padding: 14px 16px; font-weight: 600; color: #475569; border-bottom: 2px solid #e2e8f0; white-space: nowrap; }
         td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; color: #334155; }
-        
-        /* Efeito de passar o mouse na linha da tabela */
         tr:hover td { background-color: #f1f5f9; }
-        tr:last-child td { border-bottom: none; }
-
-        .badge-qtd { 
-            background-color: #e0f2fe; 
-            color: #0369a1; 
-            padding: 6px 10px; 
-            border-radius: 8px; 
-            font-size: 0.875rem; 
-            font-weight: 600; 
-        }
+        
+        .badge-qtd { background-color: #e0f2fe; color: #0369a1; padding: 6px 10px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; }
         .empty-state { text-align: center; padding: 40px; color: #94a3b8; font-style: italic; }
+
+        /* ================= NOVAS CORES DE ALERTA DE VENCIMENTO ================= */
+        .status-badge { padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .status-ok { background-color: #d1fae5; color: #065f46; }       /* Verde */
+        .status-alerta { background-color: #fef08a; color: #854d0e; }   /* Amarelo */
+        .status-vencido { background-color: #fee2e2; color: #991b1b; }  /* Vermelho */
     </style>
 </head>
 <body>
 
     <div class="topo">
-        <h1>💊 Controle de Estoque AACD</h1>
+        <h1>💊 Controle de Estoque</h1>
         <p>Gerenciamento inteligente de medicamentos e validades</p>
     </div>
 
@@ -130,27 +58,22 @@
                     <label>Nome do Medicamento</label>
                     <input type="text" name="nome" placeholder="Ex: Paracetamol 500mg" required>
                 </div>
-                
                 <div class="form-group">
                     <label>Lote</label>
                     <input type="text" name="lote" placeholder="Ex: L-101" required>
                 </div>
-
                 <div class="form-group">
                     <label>Data de Fabricação</label>
                     <input type="date" name="fabricacao" required>
                 </div>
-
                 <div class="form-group">
                     <label>Data de Validade</label>
                     <input type="date" name="validade" required>
                 </div>
-
                 <div class="form-group">
                     <label>Quantidade na Caixa</label>
                     <input type="number" name="quantidade" placeholder="Ex: 50" required min="1">
                 </div>
-                
                 <button type="submit">Cadastrar no Sistema</button>
             </form>
         </div>
@@ -164,9 +87,9 @@
                             <th>ID</th>
                             <th>Medicamento</th>
                             <th>Lote</th>
-                            <th>Fabricação</th>
                             <th>Validade</th>
                             <th>Qtd</th>
+                            <th>Status</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -175,14 +98,25 @@
                             <td style="color: #94a3b8;">#{{ med.id }}</td>
                             <td><strong>{{ med.nome }}</strong></td>
                             <td>{{ med.lote }}</td>
-                            <td>{{ med.fabricacao.strftime('%d/%m/%Y') }}</td>
                             <td>{{ med.validade.strftime('%d/%m/%Y') }}</td>
                             <td><span class="badge-qtd">{{ med.quantidade }} un</span></td>
+                            
+                            <td>
+                                {% if med.validade < hoje %}
+                                    <span class="status-badge status-vencido">Vencido</span>
+                                
+                                {% elif med.validade <= limite_alerta %}
+                                    <span class="status-badge status-alerta">Vence em Breve</span>
+                                
+                                {% else %}
+                                    <span class="status-badge status-ok">No Prazo</span>
+                                {% endif %}
+                            </td>
                         </tr>
                         {% else %}
                         <tr>
                             <td colspan="6" class="empty-state">
-                                Nenhum medicamento cadastrado ainda. Comece adicionando ao lado!
+                                Nenhum medicamento cadastrado ainda.
                             </td>
                         </tr>
                         {% endfor %}
@@ -190,7 +124,6 @@
                 </table>
             </div>
         </div>
-
     </div>
 
 </body>
